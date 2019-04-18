@@ -15,17 +15,23 @@ public class DailyController {
 
          private static DailyDao dailyDao = new DailyDao();
 
-        @RequestMapping("/returnAllStocks")
-        @ResponseBody
-        public List<Daily> returnAllTests() throws SQLException {
-            return dailyDao.returnAllTests();
-        }
+//        @RequestMapping("/returnAllStocks")
+//        @ResponseBody
+//        public List<Daily> returnAllTests() throws SQLException {
+//            return dailyDao.returnAllTests();
+//        }
+//
+//        @RequestMapping("/returnTestsWhere/{field}/equals/{value}")
+//        @ResponseBody
+//        public List<Daily> returnTestsByFieldAndValue(@PathVariable("field") String field, @PathVariable("value") String value) throws SQLException{
+//            return dailyDao.returnTestByFieldAndValue(field, value);
+//        }
 
-        @RequestMapping("/returnTestsWhere/{field}/equals/{value}")
-        @ResponseBody
-        public List<Daily> returnTestsByFieldAndValue(@PathVariable("field") String field, @PathVariable("value") String value) throws SQLException{
-            return dailyDao.returnTestByFieldAndValue(field, value);
-        }
+    @RequestMapping("/returnStocksByDay/{day}/{best}")
+    @ResponseBody
+    public List<Daily> returnStocksByDay(@PathVariable("day") String day, @PathVariable("best") Boolean best) throws SQLException {
+        return dailyDao.returnStocksByDay(day, best);
+    }
 
     }
 
