@@ -3,7 +3,6 @@
     <div class="container">
         <div class="row">
             <div class="col-5">
-                <h1>Top 5</h1>
                 <canvas id="barBest" class="chart chart-bar ng-isolate-scope"
                         chart-data="bestData" chart-labels="bestLabels">
                 </canvas>
@@ -20,46 +19,17 @@
                         <th>Price Change</th>
                         </thead>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
+                    <tr  ng-repeat="stock in bestStocks">
+                        <td>{{ $index + 1}}</td>
+                        <td>{{ stock.ticker }}</td>
+                        <td>{{ stock.openPrice }}</td>
+                        <td>{{ stock.closePrice }}</td>
+                        <td>{{ stock.absoluteDifference }}</td>
                     </tr>
                 </table>
             </div>
             <div class="offset-1"></div>
             <div class="col-5">
-                <h1>Bottom 5</h1>
                 <canvas id="barWorst" class="chart chart-bar ng-isolate-scope"
                         chart-data="worstData" chart-labels="worstLabels">
                 </canvas>
@@ -76,40 +46,12 @@
                         <th>Price Change</th>
                         </thead>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>AAPL</td>
-                        <td>199.46</td>
-                        <td>199.23</td>
-                        <td>0.23</td>
+                    <tr  ng-repeat="stock in worstStocks">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ stock.ticker }}</td>
+                        <td>{{ stock.openPrice }}</td>
+                        <td>{{ stock.closePrice }}</td>
+                        <td>{{ stock.absoluteDifference }}</td>
                     </tr>
                 </table>
             </div>
