@@ -1,0 +1,37 @@
+.content {
+    padding: 80px 0 0 0;
+}
+
+body {
+    background-color: #fcfcfc;
+}
+.nav-pills .nav-link.active{
+    color: #fff;
+    background-color: #343a40;
+    margin: 5px;
+}
+
+.nav-pills a{
+    color: #343a40;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    color: white;
+}
+
+.static {
+    width: 100%;
+    z-index: 2;
+    height: 20px;
+    position: fixed;
+}
+
+img {
+    filter: invert(1);
+    width: 50px;
+    height: auto;
+}

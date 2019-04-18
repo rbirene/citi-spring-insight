@@ -1,78 +1,75 @@
-<html ng-app="testTool">
-<head>
-    <meta charset="UTF-8">
-    <title>Main page </title>
+<!DOCTYPE html>
+<html ng-app="stockApp">
+  <head>
+    <!-- external stylesheets -->
+      <!-- bootstrap -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/test.css">
+    <!-- own stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 
+    <!-- external scripts -->
+      <!-- angularjs -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+      <!-- angularjs route -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js"></script>
+      <!-- jquery -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <!-- popper -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <!-- bootstrap js -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- charts js -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.js"></script>
+    <!-- own script -->
 
+    <script src="js/Chart.min.js"></script>
+    <script src="js/angular-chart.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.js"></script>
+    <script src="js/stockApp.js"></script>
 
-    <script src="js/test.js"></script>
+    <title>Team Beta</title>
+  </head>
+  <div ng-controller="mainCtrl" class="static">
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#!"><img src="Science-Beta-icon.png"></a>
+        <div class="offset-2"></div>
+        <h2> Best Performing Stocks</h2>
+        <div class="offset-2"></div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-</head>
-<div ng-controller="mainCtrl">
-    <div class="container-fluid">
-        <div class="col">
-            <div id="navOpt">
-                <nav class="navbar navbar-light bg-light">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link" id="home-tab1" data-toggle="tab" href="#!" role="tab"
-                               aria-controls="home" style="color:gray">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="home-tab2" data-toggle="tab" href="#!test/1" role="tab"
-                               aria-controls="home" style="color:gray">Day One</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab1" data-toggle="tab" href="#!test/2" role="tab"
-                               aria-controls="profile" style="color:gray">Day Two</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#!test/3" role="tab"
-                               aria-controls="contact" style="color:gray">Day Three</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact-tab4" data-toggle="tab" href="#!test/4" role="tab"
-                               aria-controls="contact" style="color:gray">Day Four</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact-tab5" data-toggle="tab" href="#!test/5" role="tab"
-                               aria-controls="contact" style="color:gray">Day Five</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact-tab6" data-toggle="tab" href="#!test/total" role="tab"
-                               aria-controls="contact" style="color:gray">Totals</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            ...
-                        </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-                    </div>
+        <h2> Worst Performing Stocks</h2>
 
-                </nav>
-            </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
+  <body>
+  <div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
+        <div class="nav flex-column nav-pills " id="nav-tabs" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="home-tab" data-toggle="pill" href="#!" role="tab" aria-controls="home" aria-selected="true">Home</a>
+          <a class="nav-link" id="mon-tab" data-toggle="pill" href="#!day/Mon" role="tab" aria-controls="mon" aria-selected="false">Monday</a>
+          <a class="nav-link" id="tue-tab" data-toggle="pill" href="#!day/Tue" role="tab" aria-controls="tue" aria-selected="false">Tuesday</a>
+          <a class="nav-link" id="wed-tab" data-toggle="pill" href="#!day/Wed" role="tab" aria-controls="wed" aria-selected="false">Wednesday</a>
+          <a class="nav-link" id="thu-tab" data-toggle="pill" href="#!day/Thu" role="tab" aria-controls="thu" aria-selected="false">Thursday</a>
+          <a class="nav-link" id="fri-tab" data-toggle="pill" href="#!day/Fri" role="tab" aria-controls="fri" aria-selected="false">Friday</a>
         </div>
+      </div>
+      <div class="col-10">
+        <!-- dynamic content -->
+        <div ng-view>
+
+        </div>
+
+      </div>
     </div>
-</div>
-<body>
-<div ng-view></div>
-</body>
+  </div>
+  </div>
+
+  </body>
 </html>
