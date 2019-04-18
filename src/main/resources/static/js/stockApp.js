@@ -42,7 +42,7 @@ stockApp.controller("dayCtrl", function($scope, $http, $routeParams){
   //$scope.series= ["series a", "series b"];
 
   //best stocks
-  $http.get("/stock/returnStocksByDay/" + $routeParams.day + "/true").then(function(response){
+  $http.get("/daily/returnStocksByDay/" + $routeParams.dayName + "/true").then(function(response){
 
     $scope.bestStocks = response.data;
     console.log($scope.bestStocks);
@@ -50,16 +50,16 @@ stockApp.controller("dayCtrl", function($scope, $http, $routeParams){
     $scope.bestLabels = [$scope.bestStocks[0].ticker, $scope.bestStocks[1].ticker, $scope.bestStocks[2].ticker,
       $scope.bestStocks[3].ticker, $scope.bestStocks[4].ticker];
 
-    $scope.bestData = [$scope.bestStocks[0].absoluteDiff, $scope.bestStocks[1].absoluteDiff,
-        $scope.bestStocks[2].absoluteDiff,
-        $scope.bestStocks[3].absoluteDiff, $scope.bestStocks[4].absoluteDiff];
+    $scope.bestData = [$scope.bestStocks[0].absoluteDifference, $scope.bestStocks[1].absoluteDifference,
+        $scope.bestStocks[2].absoluteDifference,
+        $scope.bestStocks[3].absoluteDifference, $scope.bestStocks[4].absoluteDifference];
 
     $scope.series= ["series a", "series b"];
 
   })
 
   //worst stocks
-  $http.get("/stock/returnStocksByDay/" + $routeParams.day + "/false").then(function(response){
+  $http.get("/daily/returnStocksByDay/" + $routeParams.dayName + "/false").then(function(response){
 
     $scope.worstStocks = response.data;
     console.log($scope.worstStocks);
@@ -68,8 +68,8 @@ stockApp.controller("dayCtrl", function($scope, $http, $routeParams){
       $scope.worstStocks[2].ticker,
       $scope.worstStocks[3].ticker, $scope.worstStocks[4].ticker];
 
-    $scope.worstData = [$scope.worstStocks[0].absoluteDiff, $scope.worstStocks[1].absoluteDiff, $scope.worstStocks[2].absoluteDiff,
-        $scope.worstStocks[3].absoluteDiff, $scope.worstStocks[4].absoluteDiff];
+    $scope.worstData = [$scope.worstStocks[0].absoluteDifference, $scope.worstStocks[1].absoluteDifference, $scope.worstStocks[2].absoluteDifference,
+        $scope.worstStocks[3].absoluteDifference, $scope.worstStocks[4].absoluteDifference];
 
     $scope.series= ["series a", "series b"];
 
