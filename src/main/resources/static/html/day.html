@@ -1,9 +1,9 @@
-<div ng-app="mainCtrl">
+<div ng-controller="dayCtrl">
 
-<div ng-controller="mainCtrl">
     <div class="container">
         <div class="row">
             <div class="col-5">
+                <h1>Top 5</h1>
                 <canvas id="barBest" class="chart chart-bar ng-isolate-scope"
                         chart-data="bestData" chart-labels="bestLabels">
                 </canvas>
@@ -13,7 +13,7 @@
                 <table class = "table table-striped">
                     <tr>
                         <thead>
-                        <th>Day</th>
+                        <th>#</th>
                         <th>Stock</th>
                         <th>Opening Price</th>
                         <th>Closing Price</th>
@@ -21,35 +21,35 @@
                         </thead>
                     </tr>
                     <tr>
-                        <td>Mon</td>
+                        <td>1</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
                         <td>0.23</td>
                     </tr>
                     <tr>
-                        <td>Tue</td>
+                        <td>2</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
                         <td>0.23</td>
                     </tr>
                     <tr>
-                        <td>Wed</td>
+                        <td>3</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
                         <td>0.23</td>
                     </tr>
                     <tr>
-                        <td>Thu</td>
+                        <td>4</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
                         <td>0.23</td>
                     </tr>
                     <tr>
-                        <td>Fri</td>
+                        <td>5</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
@@ -59,6 +59,7 @@
             </div>
             <div class="offset-1"></div>
             <div class="col-5">
+                <h1>Bottom 5</h1>
                 <canvas id="barWorst" class="chart chart-bar ng-isolate-scope"
                         chart-data="worstData" chart-labels="worstLabels">
                 </canvas>
@@ -68,7 +69,7 @@
                 <table class = "table table-striped">
                     <tr>
                         <thead>
-                        <th>Day</th>
+                        <th>#</th>
                         <th>Stock</th>
                         <th>Opening Price</th>
                         <th>Closing Price</th>
@@ -76,35 +77,35 @@
                         </thead>
                     </tr>
                     <tr>
-                        <td>Mon</td>
+                        <td>1</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
                         <td>0.23</td>
                     </tr>
                     <tr>
-                        <td>Tue</td>
+                        <td>2</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
                         <td>0.23</td>
                     </tr>
                     <tr>
-                        <td>Wed</td>
+                        <td>3</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
                         <td>0.23</td>
                     </tr>
                     <tr>
-                        <td>Thu</td>
+                        <td>4</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
                         <td>0.23</td>
                     </tr>
                     <tr>
-                        <td>Fri</td>
+                        <td>5</td>
                         <td>AAPL</td>
                         <td>199.46</td>
                         <td>199.23</td>
@@ -118,4 +119,7 @@
 
 
     </div>
+
+
+
 </div>
